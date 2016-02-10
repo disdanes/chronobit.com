@@ -1,0 +1,40 @@
+{% extends "lunaform_base.html" %}
+
+{% block header %}
+{% endblock header %}
+
+{% block promo %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h3>What's this game all about ?</h3>
+          <a href="{{ SITEURL }}/lunaform/play">
+              <video class="slider-video" preload="auto" loop autoplay=""><source type="video/webm" src="{{ SITEURL }}/{{THEME_STATIC_DIR}}/videos/lunaform/build0.webm"></video>
+          </a>
+          Lunaform is a puzzle strategy game that's all about filling up a hex grid with energy you get with collisions from the stars. It's like inverted breakout, but with a hex grid, twitch reflexes, and more patterns.
+          <h3>Interested ? Want to give it a test run? </h3>
+          <center>
+            <a class="btn btn-info btn-play col-md-12" href="{{ SITEURL }}/lunaform/play">
+              PLAY OUR DEMO
+            </a>
+            <h6>please</h6>
+          </center>
+        </div>
+    </div>
+    <hr>
+</div>
+{% endblock promo %}
+
+{% block contentcontainer %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+    {% block content %}
+      {% set category_name = LUNAFORM_CATEGORY %}
+        {% include "paginated_articles.html" %}
+      {% endblock content %}
+
+      </div>
+    </div>
+  </div> 
+{% endblock contentcontainer %}

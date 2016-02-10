@@ -1,0 +1,24 @@
+{% for article in articles_page.object_list %}
+  {% if article.category == category_name %}
+    <div class="post-preview">
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+            <h2 class="post-title">
+                {{ article.title }}
+            </h2>
+        </a>
+        {% if article.summary %}
+            {{ article.summary|truncate(140) }}
+        {% endif %}
+        <p class="post-meta">Posted by
+            {% for author in article.authors %}
+                <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+            {% endfor %}
+             on {{ article.locale_date }}
+        </p>
+    </div>
+    <hr>
+  {% endif %}
+{% endfor %}
+
+{% include "pagination.html" %}
+

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block navextra %}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<center>
+  <div class="chronobit-logo">
+    <a href="{{ SITEURL}}/">
+      <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/cblogo2.svg"></img>
+    </a>
+  </div>
+</center>
+{% endblock navextra %}
+
+
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <h3 class="tagline">{{ SITESUBTITLE }}</h3>
+        </div>
+    </div>
+    <hr>
+    {% include "lunaform_promo.html" %}
+</div>
+{% endblock header %}
+
+{% block promo %}
+{% endblock promo %}
+
+{% block content %}
+{% endblock content %}
+

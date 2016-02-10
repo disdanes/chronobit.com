@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block favicon %}
+<link href="{{ SITEURL}}/{{ THEME_STATIC_DIR }}/images/lunaform/favicon.png" rel="icon" type="image/png">
+{% endblock favicon %}
+
+
+{% block title %}
+  {{ LUNAFORM_SITENAME }}
+{% endblock title %}
+
+{% block extracss %}
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/lunaform.css" rel="stylesheet">
+{% endblock extracss %}
+
+{% block navclass %}
+navbar-lunaform
+{% endblock %}
+
+{% block menuitems %}
+  <!-- Controls display of menu items -->
+  {% if LUNAFORM_MENUITEMS %}
+    {% for name, link in LUNAFORM_MENUITEMS %}
+    <li
+      {% if name == page %}
+        class="active"
+      {% endif %}>
+      <a href="{{ SITEURL }}/{{ link }}">{{ name }}</a>
+    </li>
+    {% endfor %}
+  {% endif %}
+{% endblock menuitems %}
+
+
+{% block navextra %}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<center>
+  <div class="lunaform-logo">
+    <a href="{{ LUNAFORM_SITEURL }}">
+      <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/twitter_banner1.jpg"></img>
+    </a>
+  </div>
+</center>
+{% endblock navextra %}
+
+{% block footer %}
+  {% set TWITTER_URL=LUNAFORM_TWITTER_URL %}
+  {% set FACEBOOK_URL=LUNAFORM_FACEBOOK_URL %}
+  {% set GOOGLE_PLUS_URL="" %}
+  {% set PINTEREST_URL="" %}
+  {% set SITEURL=LUNAFORM_SITEURL %}
+  {% include "footer.html" %}
+{% endblock footer %}
+
+

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+
+{% block navextra %}{% endblock navextra %}
+
+{% block header %}{% endblock header %}
+
+{% block promo %}{% endblock promo %}
+
+{% block contentcontainer %}
+<div class="container">
+  <div class="row">
+    <h1>Personal musings and notes</h1>
+  </div>
+</div>
+  <div class="col-md-2">
+    <center>
+      <h2>Justin Lindsey</h2>
+      
+      <div class="col-md-8 col-md-offset-2">
+        <a href="{{ SITEURL}}/disdanes_dev">
+          <img class="img-circle" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/justin_flat2.png"></img>
+        </a>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          CTO @ 
+          <a href="{{ SITEURL }}/">Chronobit Studios</a>
+        </div>
+        <div class="row">
+          <a href="{{ GITHUB_URL }}">
+            <i class="fa fa-github"></i>
+              Github
+          </a>
+        </div>
+      </div>
+    </center>
+  </div>
+
+  <div class="col-md-9 col-md-offset-1">
+  {% set category_name = PERSONAL_CATEGORY %}
+    {% include "paginated_articles.html" %}
+  </div>
+{% endblock contentcontainer %}
+

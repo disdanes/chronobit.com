@@ -1,0 +1,6 @@
+*.pyc
+pelican-themes/
+themes/
+output/
+*.pid
+.DS_Store

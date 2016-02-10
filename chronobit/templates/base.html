@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+        {% if COLOR_SCHEME_CSS %}
+            <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/{{ COLOR_SCHEME_CSS }}" rel="stylesheet">
+        {% else %}
+            <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/darkly.css" rel="stylesheet">
+        {% endif %}
+
+        <!-- Custom Fonts -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+
+        {% block extracss %}
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/chronobit.css" rel="stylesheet">
+        {% endblock extracss %}
+
+        <!-- Favicon -->
+        {% block favicon %}
+        <link href="{{ SITEURL}}/{{ THEME_STATIC_DIR }}/images/favicon.png" rel="icon" type="image/png">
+        {% endblock favicon %}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    {% endblock head %}
+
+	{% block opengraph %}
+		<meta property="og:locale" content="{{ DEFAULT_LANG }}">
+		<meta property="og:site_name" content="{{ SITENAME }}">
+	{% endblock opengraph %}
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default {% block navclass %}navbar-chronobit{% endblock navclass %}">
+    <div class="container">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+
+        </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-chronobit" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  {% block menuitems %}
+                  <!-- Controls display of menu items -->
+                  {% if MENUITEMS %}
+                    {% for name, link in MENUITEMS %}
+                    <li
+                      {% if name == page %}
+                        class="active"
+                      {% endif %}>
+                      <a href="{{ SITEURL }}/{{ link }}">{{ name }}</a>
+                    </li>
+                    {% endfor %}
+                  {% endif %}
+
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                        {% for p in PAGES %}
+                            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                        {% endfor %}
+                    {% else %}
+                        {% if DISPLAY_CATEGORIES_ON_MENU %}
+                            {% for cat, null in categories %}
+                                <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                  {% endblock menuitems %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+      {% block navextra %}{% endblock navextra %}
+        <!-- /.container -->
+    </nav>
+
+    {% block header %}{% endblock header %}
+
+    {% block promo %}{% endblock promo %}
+
+    <!-- Main Content -->
+    {% block contentcontainer %}
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  {% block content %}{% endblock content %}
+              </div>
+          </div>
+      </div>
+    {% endblock contentcontainer %}
+
+    {% block footer %}
+      {% include "footer.html" %}
+    {% endblock footer %}
+
+
+    <!-- jQuery -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/clean-blog.min.js"></script>
+
+    {% block extrajs %}
+    {% endblock %}
+
+    {% include 'analytics.html' %}
+    {% include 'disqus_script.html' %}
+</body>
+
+</html>

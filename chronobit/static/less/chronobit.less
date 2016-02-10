@@ -1,0 +1,136 @@
+@white: #fff;
+@chronobit_brown: #574942;
+@chronobit_blue: #abd4e4;
+@chronobit_light_brown: #c7b299;
+@chronobit_logo_font: 'Josefin Sans', sans-serif;
+
+@chronobit_title_size: 45px;
+
+body {
+  background: @white;
+  color: @chronobit_brown;
+}
+
+img {
+  width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: @chronobit_logo_font;
+}
+
+a {
+  color: lighten(@chronobit_brown, 20%);
+}
+
+a:hover, a:focus{
+  color: @chronobit_blue;
+}
+
+a img:hover,
+a img:focus {
+  cursor: pointer;
+}
+
+p {
+  margin: 10px 0;
+}
+
+iframe {
+  width: 100%;
+}
+
+video {
+  width:100%;
+}
+
+.tagline {
+  text-align:center;
+}
+
+.chronobit-title {
+  color: @chronobit_blue;
+  font-weight: 300;
+  font-size: @chronobit_title_size;
+  font-family: @chronobit_logo_font;
+}
+.chronobit-title:hover, .chronobit-title:focus{
+  text-decoration: none;
+}
+
+.chronobit-logo {
+  width: 30%;
+  min-width: 280px;
+}
+.chronobit-logo:hover, .chronobit-logo:focus{
+  cursor:pointer;
+}
+.intro-header {
+
+  margin-bottom:0px;
+}
+.intro-header .page-heading h1 {
+  color: @chronobit_blue;
+  font-weight: 300;
+}
+
+.post-preview > a {
+  color: lighten(@chronobit_brown, 10%);
+}
+.post-preview > a:hover,
+.post-preview > a:focus {
+  text-decoration: none;
+  color: @chronobit_blue;
+}
+.post-preview > a > .post-title {
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.post-preview > a > .post-subtitle {
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.post-preview > .post-meta {
+  color: darken(@chronobit_light_brown, 10%);
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+.post-preview > .post-meta > a {
+  text-decoration: none;
+  color: lighten(@chronobit_brown, 20%);
+}
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+  color: darken(@chronobit_blue, 20%);
+  text-decoration: underline;
+}
+.fa-inverse {
+  color: @white;
+}
+.navbar-custom .navbar-brand {
+  color: @chronobit_blue;
+}
+
+.navbar-chronobit{
+  border-color: @chronobit_brown;
+  background-color: @chronobit_brown;
+  margin-bottom: 0px;
+  border-radius: 0px;  
+}
+.navbar-default .navbar-nav>li>a {
+  color: @chronobit_blue;
+}
+.navbar-default .navbar-nav>li>a:hover {
+  color: @chronobit_light_brown;
+}
+.navbar-nav {
+  background-color: @chronobit_brown;
+}
+
+.lunaform-promo {
+  background-repeat: no-repeat;
+  background-position: center left;
+}

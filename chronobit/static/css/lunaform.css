@@ -1,0 +1,95 @@
+body {
+  background: #fff;
+  color: #232f3d;
+}
+img {
+  width: 100%;
+}
+a img:hover,
+a img:focus {
+  cursor: pointer;
+}
+p {
+  margin: 30px 0;
+}
+li a {
+  text-decoration: underline;
+}
+iframe {
+  width: 100%;
+}
+video {
+  width: 100%;
+}
+.tagline {
+  text-align: center;
+}
+.chronobit-title:hover,
+.chronobit-title:focus {
+  text-decoration: none;
+}
+.lunaform-logo {
+  width: 50%;
+  min-width: 380px;
+}
+.lunaform-logo:hover,
+.chronobit-logo:focus {
+  cursor: pointer;
+}
+.intro-header {
+  margin-bottom: 0px;
+}
+.intro-header .page-heading h1 {
+  font-weight: 300;
+}
+.post-preview > a:hover,
+.post-preview > a:focus {
+  text-decoration: none;
+}
+.post-preview > a > .post-title {
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.post-preview > a > .post-subtitle {
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.post-preview > .post-meta {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+.post-preview > .post-meta > a {
+  text-decoration: none;
+}
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+  text-decoration: underline;
+}
+.navbar-lunaform {
+  border-color: #232f3d;
+  background-color: #232f3d;
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #b5d558;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #ffe574;
+}
+.navbar-nav {
+  background-color: #232f3d;
+}
+.lunaform-promo {
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.btn-play {
+  padding: 45px 45px;
+  font-size: 45px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
