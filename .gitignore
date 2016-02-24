@@ -4,3 +4,5 @@ themes/
 output/
 *.pid
 .DS_Store
+# Mac OSX does some dumb stuff with Google Drive
+Icon

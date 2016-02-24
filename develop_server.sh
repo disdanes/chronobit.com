@@ -6,17 +6,23 @@ PY=${PY:-python}
 PELICAN=${PELICAN:-pelican}
 PELICANOPTS=
 
-BASEDIR=$(pwd)
-INPUTDIR=$BASEDIR/content
-OUTPUTDIR=$BASEDIR/output
-CONFFILE=$BASEDIR/pelicanconf.py
+BASEDIR="$(pwd)"
+echo $BASEDIR
+INPUTDIR="$BASEDIR/content"
+echo $INPUTDIR
+OUTPUTDIR="$BASEDIR/output"
+echo $OUTPUTDIR
+CONFFILE="$BASEDIR/pelicanconf.py"
+echo $CONFFILE
 
 ###
 # Don't change stuff below here unless you are sure
 ###
 
-SRV_PID=$BASEDIR/srv.pid
-PELICAN_PID=$BASEDIR/pelican.pid
+SRV_PID="$BASEDIR/srv.pid"
+echo $SRV_PID
+PELICAN_PID="$BASEDIR/pelican.pid"
+echo $PELICAN_PID
 
 function usage(){
   echo "usage: $0 (stop) (start) (restart) [port]"
@@ -32,7 +38,7 @@ function alive() {
 }
 
 function shut_down(){
-  PID=$(cat $SRV_PID)
+  PID="$(cat "$SRV_PID")"
   if [[ $? -eq 0 ]]; then
     if alive $PID; then
       echo "Stopping HTTP server"
@@ -42,10 +48,10 @@ function shut_down(){
     fi
     rm $SRV_PID
   else
-    echo "HTTP server PIDFile not found"
+    echo "HTTP server PID File not found"
   fi
 
-  PID=$(cat $PELICAN_PID)
+  PID="$(cat "$PELICAN_PID")"
   if [[ $? -eq 0 ]]; then
     if alive $PID; then
       echo "Killing Pelican"
@@ -63,14 +69,14 @@ function start_up(){
   local port=$1
   echo "Starting up Pelican and HTTP server"
   shift
-  $PELICAN --debug --autoreload -r $INPUTDIR -o $OUTPUTDIR -s $CONFFILE $PELICANOPTS &
+  $PELICAN --debug --autoreload -r "$INPUTDIR" -o "$OUTPUTDIR" -s "$CONFFILE" $PELICANOPTS &
   pelican_pid=$!
   echo $pelican_pid > $PELICAN_PID
-  cd $OUTPUTDIR
+  cd "$OUTPUTDIR"
   $PY -m pelican.server $port &
   srv_pid=$!
   echo $srv_pid > $SRV_PID
-  cd $BASEDIR
+  cd "$BASEDIR"
   sleep 1
   if ! alive $pelican_pid ; then
     echo "Pelican didn't start. Is the Pelican package installed?"

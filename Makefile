@@ -3,10 +3,10 @@ PELICAN?=pelican
 PELICANOPTS=
 
 BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output
-CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
+INPUTDIR="$(BASEDIR)/content"
+OUTPUTDIR="$(BASEDIR)/output"
+CONFFILE="$(BASEDIR)/pelicanconf.py"
+PUBLISHCONF="$(BASEDIR)/publishconf.py"
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -18,6 +18,7 @@ SSH_USER=root
 SSH_TARGET_DIR=/var/www
 
 S3_BUCKET=chronobit.com
+TEST_S3_BUCKET=lunaformgame.com
 
 CLOUDFILES_USERNAME=my_rackspace_username
 CLOUDFILES_API_KEY=my_rackspace_api_key
@@ -112,10 +113,13 @@ ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --guess-mime-type --default-mime-type="text/html"
+	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --exclude-from .s3ignore --acl-public --guess-mime-type --default-mime-type="text/html"
+
+test_s3_upload: publish
+	s3cmd sync $(OUTPUTDIR)/ s3://$(TEST_S3_BUCKET) --exclude-from .s3ignore --acl-public --guess-mime-type --default-mime-type="text/html"
 
 s3_upload_force: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) -f --acl-public --delete-removed --guess-mime-type --default-mime-type="text/html"
+	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) -f --exclude-from .s3ignore --acl-public --delete-removed --guess-mime-type --default-mime-type="text/html"
 
 cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
