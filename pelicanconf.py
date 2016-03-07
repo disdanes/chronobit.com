@@ -21,7 +21,7 @@ PATH = 'content'
 
 TIMEZONE = 'America/New_York'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = u'en_US'
 DEFAULT_DATE = 'fs'
 
 # Feed generation is usually not desired when developing
@@ -104,3 +104,5 @@ GITHUB_URL = "https://github.com/disdanes"
 
 LUNAFORM_TWITTER_URL = "https://twitter.com/lunaformgame"
 LUNAFORM_FACEBOOK_URL = "https://www.facebook.com/LunaformGame/"
+
+FACEBOOK_APP_ID = "759841557377239"

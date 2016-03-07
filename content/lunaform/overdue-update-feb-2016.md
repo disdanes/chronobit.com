@@ -1,5 +1,6 @@
 Title: Overdue Update on Lunaform
 Slug: lunaform/overdue-update-feb-2016
+Date: 2016-02-25 18:21
 Authors: Justin Lindsey
 Summary: It's been awhile since we've posted an update on Lunaform, so I discuss where we are and what we're doing.
 Template: lunaform_article
@@ -36,5 +37,5 @@ Itch.io, Steam, IOS, Android to start. That might be ambitious, but we had Linux
 
 I won't be taking a year before each update from now on :) 
 
-I plan to regularly release updates every Tuesday, and to post some tasty gifs on [twitter](https://twitter.com/lunaformgame)/[facebook](https://www.facebook.com/LunaformGame/) so be sure to follow/like for updates!
+I plan to regularly release updates every week, and to post some tasty gifs on [twitter](https://twitter.com/lunaformgame)/[facebook](https://www.facebook.com/LunaformGame/) so be sure to follow/like for updates!
 
