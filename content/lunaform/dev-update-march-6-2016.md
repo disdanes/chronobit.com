@@ -12,7 +12,7 @@ This week I was working on revisiting our first 10 levels and trying to create a
 
 ![Nova Star](/theme/images/lunaform/novastar.gif)
 
-In rebuilding levels 9 and 10 I became way too focused on the Nova Stars, and the challenge became far too difficult as a result. I used a pattern of blue/orange/blue to try and introduce a situation where you couldn't swap in between each Nova Star, and so you had to observe the first and last stars to know which hexes would be filled at the end of the chain. 
+In rebuilding levels 9 and 10 I became way too focused on the Nova Stars, and the challenge became far too difficult as a result. I used a pattern of orange/blue/orange to try and introduce a situation where you couldn't swap in between each Nova Star, and so you had to observe the first and last stars to know which hexes would be filled at the end of the chain. 
 
 ![Too many Nova Stars](/theme/images/lunaform/too_many_novastars.jpg)
 
@@ -21,10 +21,10 @@ The problem with this, is that if the player does not immiediately recognize tha
 * Speed of Nova Stars
 * Radius of their effect
 * Number of Nova Stars spawned
-* Sequence of Nova Stars (blue, orange, blue, etc)
+* Sequence of Nova Stars (orange, blue, orange, etc)
 * Time between their spawns
 
-Molly made a great point when we were discussing why the level felt so hopeless, and it was due to how hard the Nova Stars hit (they hit for 3, which fills up a neutral hex, or destroys a partially damaged hex) in conjunction with how many there were to deal with. Area effects are powerful enough on their own, that she mentioned how I should be using them much more sparingly than I am. I took her advice and choose to tweak the time between their spawns to the player breathing room between each Nova Star, and hopefully enough time to swap before the next one hits. After updating the levels and getting Molly to try them again, she commented that they were much more enjoyable with the breathing room. I'll definitely need the perspective of some new players to understand if it's still too difficult, or if it starts to feel appropriately challenging, but I don't want players to quit because a level felt 'bad'. It's a difficult balance to strike between a challenge that makes you want to play more, vs a challenge that makes you want to quit and never try again. 
+Molly made a great point when we were discussing why the level felt so hopeless, and it was due to how hard the Nova Stars hit (they hit for 3, which fills up a neutral hex, or destroys a partially damaged hex) in conjunction with how many there were to deal with. Area effects are powerful enough on their own, that she mentioned how I should be using them much more sparingly than I am. I took her advice and choose to tweak the time between their spawns to give the player breathing room between each Nova Star, and hopefully enough time to swap before the next one hits. After updating the levels and getting Molly to try them again, she commented that they were much more enjoyable with the breathing room. I'll definitely need the perspective of some new players to understand if it's still too difficult, or if it starts to feel appropriately challenging, but I don't want players to quit because a level felt 'bad'. It's a difficult balance to strike between a challenge that makes you want to play more, vs a challenge that makes you want to quit and never try again. 
 
 ## World Selection
 
