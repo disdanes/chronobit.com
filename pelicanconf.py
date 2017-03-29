@@ -81,6 +81,7 @@ MENUITEMS = (
     ('Blog', 'blog'),
     ('Team', 'team'),
     ('Contact', 'contact'),
+    ('Privacy Policy', 'privacy'),
 )
 
 LUNAFORM_MENUITEMS = (

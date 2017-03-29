@@ -3,6 +3,7 @@ PELICAN?=pelican
 PELICANOPTS=
 
 BASEDIR=$(CURDIR)
+BINDIR="$(BASEDIR)/bin"
 INPUTDIR="$(BASEDIR)/content"
 OUTPUTDIR="$(BASEDIR)/output"
 CONFFILE="$(BASEDIR)/pelicanconf.py"
@@ -54,6 +55,7 @@ help:
 	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
 	@echo '   make dropbox_upload                 upload the web site via Dropbox    '
 	@echo '   make ftp_upload                     upload the web site via FTP        '
+	@echo '   make test_s3_upload                 upload the web site via S3 to test '
 	@echo '   make s3_upload                      upload the web site via S3         '
 	@echo '   make cf_upload                      upload the web site via Cloud Files'
 	@echo '   make github                         upload the web site via gh-pages   '
@@ -98,6 +100,7 @@ stopserver:
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
+	$(BINDIR)/compile.sh
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
